@@ -1,0 +1,1 @@
+str_eval=function(x) {return(eval(parse(text=x)))}
