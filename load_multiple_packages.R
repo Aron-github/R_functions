@@ -1,5 +1,9 @@
-
 ########################### FUNCTION TO INSTALL ALL THE NEEDED PACKAGES AT ONCE ########################### 
+# INPUT: a vector of package names
+#   checks if packages are already installed or installs them
+#   loads all the selected packages
+#   outputs a string to signal packages installed correctly or not
+# Doesn't work with packages which are not in the selected repositories or that require installation via github, biocLite, etc.
 
 load_multiple_lib<-function(needed_pkgs){
   
@@ -21,7 +25,7 @@ load_multiple_lib<-function(needed_pkgs){
   }
   
   exit_status<-sapply(needed_pkgs, require, character.only = TRUE)
-  if(length(exit_status[!exit_status])) cat(paste("Unable to install",paste(names(exit_status)[exit_status==F],collapse=", ")))
+  if(length(exit_status[!exit_status])) cat(paste("Unable to install/load",paste(names(exit_status)[exit_status==F],collapse=", ")))
   
 }
 
