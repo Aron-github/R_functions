@@ -34,8 +34,3 @@ load_multiple_lib<-function(needed_pkgs){
 needed_pkgs<-c("ggplot2", "randomForest", "FactoMineR",
                 "factoextra", "glmnet", "ape")
 load_multiple_lib(needed_pkgs)
-
-
-
-# needed_pkgs<-c("metafor","glmnet","AICcmodavg","NADA")
-
